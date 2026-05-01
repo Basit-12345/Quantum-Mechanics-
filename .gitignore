@@ -5,6 +5,7 @@
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+<<<<<<< HEAD
 *.bbl
 *.blg
 *.lof
@@ -14,3 +15,6 @@
 *.nav
 *.snm
 *.vrb
+=======
+*.gz
+>>>>>>> e66d3a4e4e05c7f9f92ffde41e7ed297231092a4
