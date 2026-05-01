@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{    amsmath}
+\geometry{margin=1in}
+\begin{document}
+\title{Quantum Mechanics}
+\author{Basit Reyaz}
+\maketitle
+
+
+\section{Introduction}
+Quantum Mechanics is the fundamental theory of fundamental constituents of matter. It essentially shows that at fundamental level, probability is the key to understanding the behavior of particles.
+Importantly, uncertainties in quantum mechanics are inherent, compared to the ones in classical mechanics which are due to lack of information.
+For example, the proabability of the outcomes of a die are only there because we do not know the exact initial conditions of the die, and the resulting equations of motion are too complex to solve. In contrast, the probability of finding an electron in a certain region of space is inherent to the nature of the electron and cannot be reduced by knowing more about the initial conditions.
+\\ Quantum Mechanics has influence on both, our understanding of the universe and on the development of technology. It has led to the development of many technologies, such as transistors, lasers, and quantum computers. It has also provided a deeper understanding of the nature of reality and has challenged our classical intuitions about the world.
+
+Then one might wonder, if there is a deeper theory that bypasses the probabilistic nature of quantum mechanics, but as far as we know, there is no such theory that can reproduce the predictions of quantum mechanics without introducing some form of non-locality or hidden variables.
+\subsection{Wave function and the Schrödinger equation}
+In classical mechanics, the description of a system is given by its position $\mathbf{r}$ and its time derivative $\mathbf{\dot{r}}$. In quantum mechanics, the description of a system is given by its wave function $\psi(\mathbf{r},t)$, which is a complex-valued function of position and time. The wave function contains all the information about the system, and its square modulus $|\psi(\mathbf{r},t)|^2$ gives the probability density of finding the particle at position $\mathbf{r}$ at time $t$.
+\\ Note that the wave function does not imply a real physical wave, rather a probability wave. The wave function can be used to calculate the expectation values of physical observables, such as position, momentum, and energy, using the appropriate operators.
+\\
+The wave function $\psi (\mathbf{r},t)$ is a complex valued function, that has to be normalizable,
+\[
+\int |\psi (\mathbf{r},t)|^2 dV = N < \infty
+\]
+The wave function must also be continous and single valued in space. 
+\\Regarding normalizable functions, there is smal caveat. For example, the plane wave solution of the free particle is not normalizable, but it can be used as a basis for constructing normalizable wave functions.
+We will discuss this point later when we talk about the free particle.\\
+The time evolution of the wave function is governed by the Schrödinger equation, which is a partial differential equation that describes how the wave function changes with time. The time-dependent Schrödinger equation is given by
+\[
+i\hbar\frac{\partial \psi }{\partial t}=\hat H \psi  
+\]
+This is the most general form of schrodinger equation, the only thing that changes is the form of Hamiltonian $\hat H $.
+For single particle non relaiticsitc case in a potential $V(\mathbf{r})$, the Hamiltonian is given by
+\[\hat H = -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})\]
+where $m$ is the mass of the particle and $\nabla^2$ is the Laplacian operator. The first term represents the kinetic energy of the particle, while the second term represents the potential energy.
+It is worth, comparing this with the classical hamiltonian, which is given by
+\[H = \frac{p^2}{2m} + V(\mathbf{r)}\]
+where $p$ is the momentum of the particle. The quantum mechanical Hamiltonian can be seen as a quantization of the classical Hamiltonian, where the momentum operator $\hat p$ is replaced by $-i\hbar\nabla$.
+\subsection{Probablty conservation and the continuity equation}
+The Schroginger equation conserves the normalization over time, which means that if the wave function is normalized at some initial time, it will remain normalized for all future times. This can be shown by taking the time derivative of the normalization condition and using the Schrödinger equation to show that it is equal to zero.
+\[\frac{d}{dt}\int |\psi (\mathbf{r},t)|^2 dV = 0\]
+This implies that the total probability of finding the particle somewhere in space is always equal to 1, which is a fundamental principle of quantum mechanics.
+\\ The conservation of probability can also be expressed in terms of a continuity equation, which relates the probability density $|\psi|^2$ to a probability current density $\mathbf{J}$. The continuity equation is given by
+\[\frac{\partial |\psi|^2}{\partial t} + \nabla \cdot \mathbf{J} = 0\]
+where the probability current density $\mathbf{J}$ is defined as 
+\[\mathbf{J} = -\frac{i\hbar}{2m}(\psi^* \nabla \psi - \psi \nabla \psi^*)\] 
+\newpage 
+\section{One dimensional systems}
+\subsection{Free particle}
+If we assume the solution of the time dependent schrodinger equation is seperabe, i.e. $\psi(x,t) = \psi(x)e^{-iEt/\hbar}   $, then we can plug this into the time dependent schrodinger equation to get
+\[E\psi(x) = -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V(x)\psi(x)\]
+\[
+E\psi(x)=\hat H \psi(x)
+\]
+This is called the time independent schrodinger equation, and it is an eigenvalue equation for the Hamiltonian operator. The solutions of this equation give us the energy eigenvalues $E$ and the corresponding energy eigenfunctions $\psi(x)$.
+For a free particle $V(x)=0$, the time independent schrodinger equation becomes
+\[      E\psi(x) = -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}\]
+The general solution to this equation is given by       
+\[\psi(x) = Ae^{ikx} + Be^{-ikx}\]
+where $k = \sqrt{2mE}/\hbar$ is the wave number, and $A$ and $B$ are arbitrary constants that can be determined by boundary conditions.
+\[
+E=\frac{\hbar^2 k^2}{2m    }
+\]
+\subsection{Asymmetric Infinite Potential Well}
+Consider a potential defined by,
+\[V(x) = \begin{cases} 
+      0 & 0 < x < a \\
+      \infty & \text{otherwise}    
+    \end{cases}
+\]
+The time independent schrodinger equation for this potential is given by    
+\[E\psi(x) = -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}\]
+with the boundary conditions $\psi(0) = 0$ and $\psi(a) = 0$. The general solution to this equation is given by
+\[\psi(x) = A\sin(kx) + B\cos(kx)\]
+Applying the boundary conditions, we get $B=0$ and $k = n\pi/a$ where $n$ is a positive integer. Therefore, the energy eigenvalues are given by
+\[E_n = \frac{\hbar^2 k^2}{2m} = \frac{\hbar^2 n^2 \pi^2}{2ma^2}\]
+and the corresponding energy eigenfunctions are given by            
+\[\psi_n(x) = A\sin\left(\frac{n\pi x}{a}\right)\]
+where $A$ is a normalization constant that can be determined by the normalization condition. The energy eigenvalues are quantized, meaning that the particle can only have certain discrete energy values, which is a fundamental feature of quantum mechanics. The energy eigenfunctions form a complete orthonormal set of functions, which means that any wave function can be expressed as a linear combination of these eigenfunctions. This is known as the principle of superposition, and it is a fundamental principle of quantum mechanics.       
+\\ The normalization constant $A$ can be determined by the normalization condition, which states that the total probability of finding the particle somewhere in space must be equal to 1. This gives us
+\[\int_0^a |\psi_n(x)|^2 dx = 1\]
+which leads to          
+\[A = \sqrt{\frac{2}{a}}\]
+\newpage     
+
+\end{document}
