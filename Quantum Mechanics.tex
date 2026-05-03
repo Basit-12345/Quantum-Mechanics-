@@ -62,7 +62,8 @@ where $k = \sqrt{2mE}/\hbar$ is the wave number, and $A$ and $B$ are arbitrary c
 \[
 E=\frac{\hbar^2 k^2}{2m    }
 \]
-\subsection{Asymmetric Infinite Potential Well}
+
+\subsection{Infinite Potential Well}
 Consider a potential defined by,
 \[V(x) = \begin{cases} 
       0 & 0 < x < a \\
@@ -83,5 +84,10 @@ where $A$ is a normalization constant that can be determined by the normalizatio
 which leads to          
 \[A = \sqrt{\frac{2}{a}}\]
 \newpage     
+\subsection{Superposition of free particle states}
+If we try to normalize the wavefunction of the free particle, we observe that it is not normalizable. This is because the wavefunction of a free particle extends to infinity in both directions, and therefore the integral of its square modulus over all space diverges. However, we can still use the free particle wavefunction as a basis for constructing normalizable wavefunctions by taking linear combinations of them. For example, we can construct a wave packet by taking a superposition of free particle states with different wave numbers $k$. This allows us to create a localized wavefunction that is normalizable and can describe a particle that is localized in space. The resulting wave packet will have a finite width in space and will spread out over time due to the dispersion of the free particle states.
+The most general such superposition can be written as,\
+\[\psi(x,t)= \int_{-\infty}^{\infty} A(k)\psi_k(x,t) dk\]
+where $A(k)$ is the amplitude of the wave packet in momentum space. By choosing an appropriate form for $A(k)$, we can create a wave packet that is localized in space and has a well-defined momentum. For example, if we choose $A(k)$ to be a Gaussian function centered around some wave number $k_0$, we can create a Gaussian wave packet that is localized around some position in space and has a well-defined momentum. The resulting wave packet will spread out over time due to the dispersion of the free particle states, but it will still be normalizable and can describe a particle that is localized in space.
 
 \end{document}
